@@ -1,0 +1,60 @@
+html{
+    font-size: 22px;
+}
+body{
+    background-color: #000000; 
+}
+h1{
+    color: blueviolet;
+}
+h2{
+    color: aquamarine;
+    float:right;
+    margin-right: 150px;
+}
+h3{
+    
+    color: #781ffe;
+}
+h4{
+    color: #14ebff;
+}
+.movieposter{
+    
+    height: 700px;
+    object-fit:cover;
+}
+.p-text{
+    float:left;
+    margin-right: 700px;
+    color: #ffffff;
+}
+.social-icons{
+    margin-left: 120px;
+    height: 140px;
+    object-fit: cover;
+}
+.small-logo{
+    margin-left: 120px;
+    height: 50px;
+    object-fit: cover;
+}
+.copywrite{
+    
+    color: #ff00ea;
+}
+.jump-to-top{
+    margin-left: 65px;
+    color: #2fff14;
+}
+.r-rating{
+    height: 40px;
+width: 150px;
+}
+.pg-rating{
+    width: 120px;
+}
+.trailer{
+    float: right;
+    margin-right: 100px;
+}

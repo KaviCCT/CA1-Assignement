@@ -1,0 +1,311 @@
+<!DOCTYPE html> <!-- Doc type -->
+<html lang="en"> <!-- Language of our website -->
+<head>  <!-- Useful information about our website to assist in SEO and navigation -->
+    <meta charset="UTF-8"> <!-- Character encoding standard we will be using -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Span of our page or visible area which will adjust according to device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Information displayed by search engines when describing our page -->
+    <meta name="name" content="CCT College Movie House - Get Movie Times and Book Tickets">
+    <meta name="description" content="CCT College presents Movie House...watch and learn!! An afterclass movie experience like no other. *For educational purposes*">
+    <!-- keywords for SEO -->
+    <meta name="keywords" content="Omniplex Cinemas, Student Cinema, Cinema in Ireland, Cinema, Movies, Films, Big screen, 3D Movies, Book Tickets, Cinema Tickets, Cinema Times, Movies Times">
+    <!-- Link to Github https://github.com/KaviCCT/CA1-Assignement -->
+    <meta name="author" content="Kavi Patak sba22391">
+    <!-- Icon and title visible in the browser tabs above our page -->
+    <link rel="icon" href="Images/Popcornicon.png" type="image/x-icon">
+    <title>CCT Movie House</title>
+    <!-- Linking our CSS3 stylesheet and bootstrap -->
+    <link rel="stylesheet" href="CSS/main.css" type="text/css">
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+</head>
+<body> 
+    <!-- Imports for jquery library -->
+    <script src="jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <header>  <!-- Header section with branding and description. Concept based on CCT College conducting student movie nights -->
+        <section class="Head">
+            <div class="container">
+                <h1> <img class="mainLogo" width="1078px" height="150px" src="Images/cooltext430441431364704.png" alt="CCT MOVIE HOUSE"> 
+                    <!-- alt tags used throughout for a desciption in case of loading problems aswell as to assist in navigation, voice over assistant, and SEO -->
+                <img  class="mainLogo2" src="Images/cooltext430501367476887.png" alt="CCT MOVIE HOUSE">
+                </h1>
+                <hr class="hr">
+                <br>
+                <h2> <img class="slogan"  src="Images/cooltext430441489635834.png" alt="Watch and learn..."> </h2>
+                <hr class="hr2">
+            </div>
+        </section>
+         <!-- JQuery before javaascript but both loaded at start -->
+        <script>
+            // JQUERY FUNCTION FOR SEARCH BAR
+            // WHEN THE DOC IS READY, USER INPUT IS FILTER THROUGH 
+            // EACH ROW OF OUR TABLE "#movieListings tr"
+            $(document).ready(function(){
+                $("#search").on("keyup",function(){
+                    var value = $(this).val().toLowerCase();
+                    $("#movieListings tr").filter(function(){
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            }); 
+            // CALLING loadXMLDoc() function ON SCREEN LOAD LOAD
+            window.onload = function(){
+                loadXMLDoc();
+            };
+            // CODE FOR loadXMLDoc() function 
+            // IF A GOOD CONNECTION IS ESTABLISHED getData function IS CALLED
+            function loadXMLDoc() {
+                const xhr = new XMLHttpRequest();
+                xhr.open("get", "listings.xml", true);
+                xhr.onreadystatechange = function(){
+                    if (this.readyState == 4 && this.status == 200){
+                        getData(this);
+                    }
+                };
+                xhr.send(null);
+            }
+            // Javascript CODE FOR getData() function        
+            function getData(xhr){        
+                const xmlDoc = xhr.responseXML;
+                var schedule = "";
+                var id = xmlDoc.getElementsByTagName("ID");
+                var r = xmlDoc.getElementsByTagName("RATING");
+                var g = xmlDoc.getElementsByTagName("GENRE");
+                var n = xmlDoc.getElementsByTagName("NAME");
+                var s = xmlDoc.getElementsByTagName("STARING");
+                var d = xmlDoc.getElementsByTagName("DIRECTOR");
+                var l = xmlDoc.getElementsByTagName("LOCATION");
+                var t = xmlDoc.getElementsByTagName("TIME");
+                var p = xmlDoc.getElementsByTagName("PRICE");
+                    for(var j = 0; j < r.length; j++){
+                        schedule = schedule + "<tr><td>";
+                        schedule = schedule + id[j].childNodes[0].nodeValue + "</td><td>";
+                        schedule = schedule + r[j].childNodes[0].nodeValue + "</td><td>";
+                        schedule = schedule + g[j].childNodes[0].nodeValue + "</td><td>";
+                        schedule = schedule + n[j].childNodes[0].nodeValue + "</td><td>";
+                        schedule = schedule + s[j].childNodes[0].nodeValue + "</td><td>";
+                        schedule = schedule + d[j].childNodes[0].nodeValue + "</td><td>";
+                        schedule = schedule + l[j].childNodes[0].nodeValue + "</td><td>";
+                        schedule = schedule + t[j].childNodes[0].nodeValue + "</td><td>";
+                        schedule = schedule + p[j].childNodes[0].nodeValue + "</td></tr>";     
+                    }
+                    schedule = schedule ;
+                    document.getElementById("movieListings").innerHTML = schedule;
+            }
+        </script> 
+        <!-- CTA: Call to action visible immediately in our navigation section which links to Each movie  -->
+        <section>
+            <nav class="searchNav">
+                <!-- Bootstrap grid layout used throughout, containers and rows used for positioning, alligning and responsiveness -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <h3 id="h3MovieListings">Movie Listings</h3>
+                            <br>
+                            <p class="search">Search by
+                            <input id="search"  type="text" placeholder="Movie/ Actor/ Director/...">   
+                            </p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <img id="headerImage" src="Images/movieNight.jpg" alt="Movie Time Image" >
+                        </div>
+                    </div>
+                    <div id="tablediv">
+                        <!-- Listings table which is dynamically popoluted with data stored in our XML form -->
+                        <table id="tableID">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Rating</th>
+                                    <th>Genre</th>
+                                    <th>Name</th>
+                                    <th>Staring</th>
+                                    <th>Director</th>
+                                    <th>Location</th>
+                                    <th>Time</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <!-- movieListings id reference used when popoluting from data stored in our schedule variable-->
+                            <tbody id="movieListings">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>  
+            </nav>
+        </section>
+    </header>
+<main><!-- Main section of our page contain the Movies currently on show, again utilising bootstrap grid layout. Long scrolling page design implemented based on market research. -->
+    <div class="container">
+        <hr class="hr">
+        <article >
+            <div class="row" id="movieBlock">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <!-- hrefs used to direct user journey towards Movie Overview and Booking -->
+                    <a href="movie2.html?Movie=000"><h5 class="mnameLinks">Blade Runner</h5></a>
+                    <a href="movie2.html?Movie=000"><img class="movieposter" src="Images/BladeRunner.jpg" alt="Blade Runner movie poster"  title="Blade Runner : click for more details" loading="eager"></a><!-- alternative info again offered and eager loading on first movie image. -->
+                </div>
+                <br>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <p class="p-text"> 
+                    <img class="r-rating" src="Images/rated_r.jpg" alt="R rating"><br>
+                    <a href="https://www.imdb.com/title/tt0083658/" target="_blank"><img class="imdb" src="Images\imdb.png" alt="imdb link"></a><br> <!-- Hyperlink to IMDB reviews -->
+                    <!-- Basic movie details displayed, agained based on market research. -->
+                    1982 <br>
+                    1h 57m <br>
+                    Room 4 <br>
+                    20:00 hr<br>
+                    <a class="btLink" href="movie2.html?Movie=000">Book Tickets</a>
+                    </p>  
+                </div>
+            </div>
+        </article>
+        <hr class="hr">
+        <article >
+            <div class="row" id="movieBlock">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <a href="movie2.html?Movie=001"><h5 class="mnameLinks">RoboCop</h5></a>
+                    <a href="movie2.html?Movie=001"><img class="movieposter" src="Images/RoboCop.jpg" alt="Robocop movie poster" title="Robocop : click for more details" loading="lazy"></a>
+                    <!-- Lazy loading used thereafter for quick initial loading of our page.-->
+                </div>
+                <br>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <p class="p-text">
+                    <img class="r-rating" src="Images/rated_r.jpg" alt="R rating"><br>
+                    <a href="https://www.imdb.com/title/tt0093870/" target="_blank"><img class="imdb" src="Images\imdb.png" alt="imdb link"></a><br>
+                    1987 <br>
+                    1h 52m <br>
+                    Hallroom <br>
+                    20:00 hr<br>
+                    <a class="btLink" href="movie2.html?Movie=001">Book Tickets</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        <hr class="hr">
+        <article>
+            <div class="row" id="movieBlock">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <a href="movie2.html?Movie=002"><h5 class="mnameLinks">The Terminator</h5></a>
+                    <a href="movie2.html?Movie=002"><img class="movieposter" src="Images/Terminator.jpg" alt="The Terminator movie poster" title="The Terminator : click for more details" loading="lazy"></a>
+                </div>
+                <br>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <p class="p-text">
+                    <img class="r-rating" src="Images/rated_r.jpg" alt="R rating"><br>
+                    <a href="https://www.imdb.com/title/tt0088247/" target="_blank"><img class="imdb" src="Images\imdb.png" alt="imdb link"></a><br>
+                    1984 <br>
+                    1h 57m <br>
+                    Cantene <br>
+                    20:00 hr<br>
+                    <a class="btLink" href="movie2.html?Movie=002">Book Tickets</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        <hr class="hr">
+        <article>
+            <div class="row" id="movieBlock">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <a href="movie2.html?Movie=003"><h5 class="mnameLinks">The Matrix</h5></a>
+                    <a href="movie2.html?Movie=003"><img class="movieposter" src="Images/Matrix.jpg" alt="The Matrix movie poster" title="The Matrix : click for more details" loading="lazy"></a>
+                </div>
+                <br>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <p class="p-text">
+                    <img class="r-rating" src="Images/rated_r.jpg" alt="R rating"><br>
+                    <a href="https://www.imdb.com/title/tt0133093/" target="_blank"><img class="imdb" src="Images\imdb.png" alt="imdb link"></a><br>
+                    1999 <br>
+                    2h 16m <br>
+                    Lecture Hall A <br>
+                    20:00 hr <br>
+                    <a class="btLink" href="movie2.html?Movie=003">Book Tickets</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        <hr class="hr">
+        <article>
+            <div class="row" id="movieBlock">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <a href="movie2.html?Movie=004"><h5 class="mnameLinks">Minority Report</h5></a>
+                    <a href="movie2.html?Movie=004"><img class="movieposter" src="Images/MinorityReport.jpg" alt="The Manority Report movie poster" title="The Manority Report : click for more details" loading="lazy"></a>
+                </div>
+                <br>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <p class="p-text">
+                    <img class="pg-rating"  src="Images/pg-13.png" alt="PG-13 rating"><br>
+                    <a href="https://www.imdb.com/title/tt0181689/" target="_blank"><img class="imdb" src="Images\imdb.png" alt="imdb link"></a><br>
+                    2002 <br>
+                    2h 25m <br>
+                    Gymnasium <br>
+                    20:00 hr<br>
+                    <a class="btLink" href="movie2.html?Movie=004">Book Tickets</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        <hr class="hr">
+        <article>
+            <div class="row" id="movieBlock">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <a href="movie2.html?Movie=005"><h5 class="mnameLinks">iRobot</h5></a>
+                    <a href="movie2.html?Movie=005"><img class="movieposter" src="Images/iRobot.jpg" alt="iRobot movie poster" title="iRobot : click for more details" loading="lazy"></a>
+                </div>
+                <br>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <p class="p-text">
+                    <img class="pg-rating"  src="Images/pg-13.png" alt="PG-13 rating"><br>
+                    <a href="https://www.imdb.com/title/tt0343818/" target="_blank"><img class="imdb" src="Images\imdb.png" alt="imdb link"></a><br>
+                    2004 <br>
+                    1h 55m <br>
+                    Courtyard <br>
+                    20:00 hr<br>
+                    <a class="btLink" href="movie2.html?Movie=005">Book Tickets</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        <hr class="hr">
+        <br>
+    </div>
+</main>
+<Footer><!-- Footer of our page with further navigation options. -->
+    <nav class="footerNav">
+        <div id="linkNav" >
+            <ul class="tabs">
+                <li class="tab"><a class="book-tickets" href="#">Listings</a></li>
+                <li class="tab">&copy; Kavi Patak</li>
+                <li class="tab"><a  class="jump-to-top" href="#">Jump to Top</a></li>
+            </ul>
+        </div>
+            <hr class="hr2">
+            <hr class="hr">
+        <div id="socialNav" ><!-- Links to popular social media websites. -->
+            <ul class="socialtabs">
+                <li class="social-icon"><a href="https://www.facebook.com/" target="_blank"><img class="icon" src="Images\socialIconFB.jpg" alt="Facebook Icon" width="80px" height="90px"  loading="lazy"></a></li>
+                <li class="social-icon"><a href="https://www.youtube.com/" target="_blank"><img class="icon" src="Images\socialIconYT.jpg" alt="Youtube Icon" width="80px" height="90px" loading="lazy"></a></li>
+                <li class="social-icon"><a href="https://www.apple.com/" target="_blank"><img class="icon" src="Images\socialIconAp.jpg" alt="Apple Icon" width="80px" height="90px" loading="lazy"></a></li>
+                <li class="social-icon"><a href="https://twitter.com/" target="_blank"><img class="icon" src="Images\socialIconTw.jpg" alt="Twitter Icon" width="80px" height="90px" loading="lazy"></a></li>
+            </ul>
+            <img class="small-logo" src="Images/cooltext430501367476887.png" alt="CCT Movie House Logo" >
+        </div>
+    </nav>
+</Footer>
+     
+
+<script>
+    // Function for loading Bookings page
+    function booking(){
+        document.getElementById('content').style.display = 'none';
+        document.getElementById('booking').style.display = 'block';
+        $(document).ready(function() {
+            createCookie('movie', movieName[choice], '10');
+        });
+    }
+</script>
+
+</body>
+</html>
+

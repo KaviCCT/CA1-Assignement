@@ -1,0 +1,305 @@
+/* CSS styling implemented by accessing our html document elemenst by type, class, and id */
+*{/* Applied to entire page, padding and margins removed to allow for more precise manipulation of elements*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000;
+    color: rgb(253, 253, 253);
+    font-size: 15px;
+    /* background-image: url("/Images/5.webp");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+html{
+    font-size: 22px;
+}
+.mainLogo{
+    width: 100%;
+}
+.mainLogo2{
+    display: none;
+    width: 100%;
+}
+.slogan{ 
+    float:right;
+    margin-right: 150px;
+}
+.hr{
+    border: #2fff14;
+    color:#14ebff;
+    background-color: #ff00ea;
+    height: 5px;
+}
+.hr2{
+    border: #2fff14;
+    color:#14ebff;
+    background-color:#14ebff;
+    height: 5px;
+}
+#bookTicketsHead{/* Font type, size, spacing and colour, background, positions styled */
+    font-size: 35px;
+    font-family: fantasy;
+    color: #781ffe;
+    letter-spacing: 1.2px;
+    -webkit-text-stroke: .5px rgb(0, 238, 255); 
+    border: 2px solid  #ff00ea;
+    padding-left: 20px;
+    border-radius:10px;
+}
+#moviePosterSlide{
+    border: 5px solid  #14ebff;
+    float: left;
+    width: 400px;
+    height: 570px;
+    object-fit:cover;
+}
+#trailerSlide{
+    margin-top: 20px;
+   width: 100%;
+    border: 5px solid  #14ebff;
+    object-fit: cover;
+}
+.button-style{/* Button  type, size, spacing and colour, background, positions styled */
+    width: 115px;
+    height: 25px;
+    background: #14ebff;
+    border: 2px solid  #ff00ea;
+    text-align: center;
+    border-radius:10px;
+    color: #000000;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.button-styleT{/* Button  type, size, spacing and colour, background, positions styled */
+    width: 115px;
+    height: 25px;
+    background: #d814ff;
+    border: 2px solid  #14ebff;
+    text-align: center;
+    border-radius:10px;
+    color: #40ff00;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.button-style:hover{
+    background-color: #781ffe;
+    color: #ffffff;
+    border: 2px solid  #ff00ea;
+}
+.button-styleT:hover{
+    background-color: #1ffe57;
+    color: #ffffff;
+    border: 2px solid  #ff00ea;
+}
+.formLabel{
+    color: #ff00ea;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: .5px;
+    
+    display:inline-block;
+    width: 120px;
+}
+
+#submitbutton{/* Submit button, shape, type, size, spacing and colour, background, positions styled */
+    width: 115px;
+    height: 25px;
+    background: #3f006c;
+    display: block;
+    border-radius:10px;
+    color: #00f7ff;;
+    border: 2px solid  #ff00ea;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1.2px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#submitbutton:hover{
+    background-color: #1ffefa;
+    color: #ffffff;
+    border: 2px solid  #ff00ea; 
+}
+#name{
+    width: 300px;
+    border-radius: 5px;
+}
+#dateTime{
+    width: 300px;
+    border-radius: 5px;
+}
+#email{
+    width: 300px;
+    border-radius: 5px;
+}
+#phone{
+    width: 300px;
+    border-radius: 5px;
+}
+#contactUs{/*Font type, size, spacing and colour modified */
+    border: 2px solid  #ff00ea;
+    font-size: 25px;
+    font-family: fantasy;
+    color: #781ffe;
+    letter-spacing: 1.2px;
+    -webkit-text-stroke: .5px rgb(0, 238, 255); 
+    padding-left: 20px;
+    border-radius:10px;
+}
+#bottonNav{
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#booking-section{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-size: cover;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.bookingForm{
+    background-color: #3f006c;
+    border: 2px solid  #ff00ea;
+}
+h3{
+    font-weight: bold;
+}
+#passNowShowingA{
+    font-size: 30px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+    color: #ff00ea;
+}
+#passNowShowingB{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+   color: #14ebff;
+}
+.social-icons{
+    height: 80px;
+    object-fit: cover;
+}
+.social-icon{
+    display: flex;
+}
+.small-logo{
+    height: 50px;
+    object-fit: cover;
+}
+.copywrite{
+    display: block;
+    color: #ff00ea;
+}
+.jump-to-top{
+   display: block;
+    color: #2fff14;
+}
+.book-tickets{
+    display: block;
+    color: #0b0bbf;
+}
+#content{
+    border: 2px solid  #ff00ea;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.tabs{
+    text-decoration: none;
+    display: block;
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #000000;
+}
+.socialtabs{
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #000000;
+}
+#socialNav{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #000000;
+}
+#bookingImage{
+    float: right;
+    object-fit: contain;
+    width: 500px;
+    display: none;
+}
+.tab{
+    margin: 20px;
+}
+
+/* @media rule used to implement and adjust our page according to device and media types */
+@media screen and (max-width:600px) {
+    .button-style{
+        font-weight:normal;
+    letter-spacing: 0px;
+        width: 70px;
+    }
+    
+.mainLogo{
+    display: none;
+}
+.mainLogo2{
+    display: block;
+}
+.slogan{
+    display: none;
+}
+#bookingImage{
+    display: none;
+}
+.smallLogo{
+    display: none;
+}
+}
+
+/* @media rule used to implement and adjust our page according to device and media types */
+@media screen and (min-width:900px) {
+    #bookingImage{
+        display: none;
+    }
+   
+    .slogan{
+        display: block;
+    }
+    .smallLogo{
+        display: none;
+    }
+    
+}
+
+/* @media rule used to implement and adjust our page according to device and media types */
+@media screen and(max-width:1400px) and (min-width:900px) {
+    .mainLogo{
+        display: none;
+        
+    }
+    .mainLogo2{
+        display: block;
+    }
+    .slogan{
+        display: block;
+    }
+    .smallLogo{
+        display: none;
+    }
+    #bookingImage{
+        display: block;
+    }
+}

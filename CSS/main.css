@@ -1,0 +1,228 @@
+/* CSS styling implemented by accessing our html document elements by name, class, and id */
+
+*{ /* Applied to entire page, padding and margins removed to allow for more precise manipulation of elements*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000;
+    font-size: 22px;
+    color: rgb(253, 253, 253);
+}
+.mainLogo{
+    width: 100%;
+}
+.mainLogo2{
+    display: none;/* display set to hidden and changed to suit device */
+    width: 100%;
+}
+.slogan{
+   /* positioning slogan to the bottom right of our banner */
+    float:right;
+    margin-right: 150px;
+}
+#h3MovieListings{ /*Font type, size, spacing and colour modified */
+    font-size: 40px;
+    font-family: fantasy;
+    color: #781ffe;
+    letter-spacing: 1px;
+    -webkit-text-stroke: .5px rgb(0, 238, 255); /* Border to text */
+}
+#headerImage{
+    margin-left: 0px;
+    float: right;
+}
+.mnameLinks{ /*Font type, size, spacing and colour modified */
+    font-family: fantasy;
+    font-size: 35px;
+    color: #781ffe;
+    letter-spacing: 1px;
+    text-decoration: underline;
+	text-decoration-color: rgb(255, 255, 255);
+}
+.mnameLinks:hover{
+    color: #62fe1f;
+}
+.btLink:hover{
+    color: #62fe1f;
+}
+.movieposter{
+    border: 5px solid  #14ebff;
+    height: 500px;
+    object-fit:cover;
+}
+.p-text{
+    /*Font type, size, spacing and colour modified */
+    padding-left: 70px;
+    color: #ffffff;
+    word-spacing: 5px;
+    line-height: 30px;
+    background-color: transparent;
+}
+.r-rating{
+    height: 40px;
+width: 150px;
+}
+.pg-rating{
+    width: 120px;
+}
+.search{/*Font type, size, spacing and colour modified */
+    color: #14ebff;
+    font-family: fantasy;
+    -webkit-text-stroke: .5px rgb(102, 0, 255);    
+}
+#headerImage{
+    float: right;
+    object-fit:cover;
+    width: 400px;
+    height: 400px;
+    padding-left: 70px;
+}
+.tableID{
+    table-layout: fixed;
+}
+.movieListings, tr, td{ 
+    /*Styling applied to our listings table */
+    /*Font type and colour modified */
+    border: 4px double #14ebff;
+    border-collapse: collapse;
+    padding: 0.5rem;
+    color: #fe1fb7;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+}
+.movieListings, th{
+    /*Styling applied to our listings table headings */
+    /*Font type and colour modified */
+    text-align: center;
+    border: 4px double #14ebff;
+    border-collapse: collapse;
+    padding: 0.5rem;
+    color: #781ffe;
+    font-size: 30px;
+    font-family:fantasy;
+    letter-spacing: 1.2px;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+}
+.imdb{
+    width: 100px;
+}
+.hr{ /*Horizontal rule modified to match color pallete */
+    border: #2fff14;
+    color:#14ebff;
+    background-color: #ff00ea;
+    height: 5px;
+}
+.hr2{
+    border: #2fff14;
+    color:#14ebff;
+    background-color:#14ebff;
+    height: 5px;
+}
+.tabs{/* Positioning of our nav tabs centred on page and responsive */
+    text-decoration: none;
+    display: block;
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #000000;
+}
+.socialtabs{
+    /* Positioning of our social tabs centred on page and responsive */
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #000000;
+}
+#socialNav{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #000000;
+}
+.tab{
+    margin: 20px;
+}
+/* Styling of our links and social icons to match website colour pallete */
+.copywrite{
+    display: block;
+    color: #ff00ea;
+}
+.jump-to-top{
+   display: block;
+    color: #2fff14;
+}
+.book-tickets{
+    display: block;
+    color: #203e8e;
+}
+.book-tickets:hover{
+    color: #62fe1f;
+}
+.social-icons{
+    height: 80px;
+    object-fit: cover;
+}
+.social-icon{
+    display: flex;
+}
+.small-logo{
+    height: 50px;
+    object-fit: cover;
+}
+
+/* @media rule used to implement and adjust our page according to device and media types */
+@media screen and (max-width:400px)  {
+    .mainLogo{
+        display: none;
+    }
+    .mainLogo2{
+        display: block;
+    }
+    .slogan{
+        display: none;
+    }
+    #headerImage{
+        display: none;
+    }
+    .tablediv{
+        display: none;
+    }
+    .movieListings{
+        display: none;
+    }
+}
+
+/* @media rule used to implement and adjust our page according to device and media types */
+@media screen and(max-width:1500px) and (min-height:800px) {
+   
+    .mainLogo{
+        display: none;
+    }
+    .mainLogo2{
+        display: block;
+    }
+    .slogan{
+        display: none;
+    }
+    #headerImage{
+        display: none;
+    }
+    /* horizontal scrollbar for tables if mobile screen */
+    .tablemobile {
+        overflow-x: auto;
+        display: block;
+    }
+    }

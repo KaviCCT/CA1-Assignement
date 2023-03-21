@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LISTINGS>
+<MOVIE>
+<ID>001</ID>
+<RATING>R</RATING>
+<GENRE>Sci-Fi, Action, Drama</GENRE>
+<NAME><![CDATA[<a ID="1" style="color:white;" href="movie2.html?Movie=000">Blade Runner</a>]]></NAME>
+<STARING>Harrison Ford, Rutger Hauer, Sean Young</STARING>
+<DIRECTOR>Ridley Scott</DIRECTOR>
+<LOCATION>Room 4</LOCATION>
+<TIME>20:00</TIME>
+<PRICE>€5</PRICE>
+</MOVIE>
+<MOVIE>
+<ID>002</ID>
+<RATING>R</RATING>
+<GENRE>Sci-Fi, Action, Crime</GENRE>
+<NAME><![CDATA[<a ID="1" style="color:white;" href="movie2.html?Movie=001">RoboCop</a>]]></NAME>
+<STARING>Edward Neumeier, Michael Miner</STARING>
+<DIRECTOR>Paul Verhoeven</DIRECTOR>
+<LOCATION>HallRoom</LOCATION>
+<TIME>20:00</TIME>
+<PRICE>€5</PRICE>
+</MOVIE>
+<MOVIE>
+<ID>003</ID>
+<RATING>R</RATING>
+<GENRE>Sci-Fi, Action</GENRE>
+<NAME><![CDATA[<a ID="1" style="color:white;" href="movie2.html?Movie=002">The Terminator</a>]]></NAME>
+<STARING>Arnold Schwarzenegger, Linda Hamilton, Michael Biehn</STARING>
+<DIRECTOR>James Cameron</DIRECTOR>
+<LOCATION>Canteen</LOCATION>
+<TIME>20:00</TIME>
+<PRICE>€5</PRICE>
+</MOVIE>
+<MOVIE>
+<ID>004</ID>
+<RATING>R</RATING>
+<GENRE>Sci-Fi, Action</GENRE>
+<NAME><![CDATA[<a ID="1" style="color:white;" href="movie2.html?Movie=003">The Matrix</a>]]></NAME>
+<STARING>Keanu Reeves, Lawrence Fishburne, Carrie-Anne Moss</STARING>
+<DIRECTOR>Lana and Lilly Wachowski</DIRECTOR>
+<LOCATION>Lecture Hall A</LOCATION>
+<TIME>20:00</TIME>
+<PRICE>€5</PRICE>
+</MOVIE>
+<MOVIE>
+<ID>005</ID>
+<RATING>PG-13</RATING>
+<GENRE>Action, Crime, Drama</GENRE>
+<NAME><![CDATA[<a ID="1" style="color:white;" href="movie2.html?Movie=004">Minority Report</a>]]></NAME>
+<STARING>Tom Cruise, Colin Farrell, Samantha Morton</STARING>
+<DIRECTOR>Steven Spielberg</DIRECTOR>
+<LOCATION>Gymnasium</LOCATION>
+<TIME>20:00</TIME>
+<PRICE>€5</PRICE>
+</MOVIE>
+<MOVIE>
+<ID>006</ID>
+<RATING>PG-13</RATING>
+<GENRE>Sci-Fi</GENRE>
+<NAME><![CDATA[<a ID="1" style="color:white;" href="movie2.html?Movie=005">iRobot</a>]]></NAME>
+<STARING>Will Smith, BrIDget Moynahan, Bruce Greenwood</STARING>
+<DIRECTOR>Alex Proyas</DIRECTOR>
+<LOCATION>Courtyard</LOCATION>
+<TIME>20:00</TIME>
+<PRICE>€5</PRICE>
+</MOVIE>
+</LISTINGS>
