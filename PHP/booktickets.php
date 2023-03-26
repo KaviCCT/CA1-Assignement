@@ -31,7 +31,7 @@ if (empty($errors)) {
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "test";
+	$dbname = "cct_movie_house";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);

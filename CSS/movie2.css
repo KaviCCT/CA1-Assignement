@@ -25,6 +25,12 @@ html{
     float:right;
     margin-right: 150px;
 }
+.h3hide{
+    display: none;
+}
+.h4hide{
+    display: none;
+}
 .hr{
     border: #2fff14;
     color:#14ebff;
@@ -47,7 +53,7 @@ html{
     padding-left: 20px;
     border-radius:10px;
 }
-#moviePosterSlide{
+#moviePosterSlide{ /* Positioning  */
     border: 5px solid  #14ebff;
     float: left;
     width: 400px;
@@ -55,7 +61,7 @@ html{
     object-fit:cover;
 }
 #trailerSlide{
-    margin-top: 20px;
+    margin-top: 55px;
    width: 100%;
     border: 5px solid  #14ebff;
     object-fit: cover;
@@ -199,6 +205,10 @@ h3{
 .book-tickets{
     display: block;
     color: #0b0bbf;
+}
+.book-tickets:hover{
+    
+    color: #2fff14;
 }
 #content{
     border: 2px solid  #ff00ea;

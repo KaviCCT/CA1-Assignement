@@ -27,6 +27,9 @@
     letter-spacing: 1px;
     -webkit-text-stroke: .5px rgb(0, 238, 255); /* Border to text */
 }
+.h2hide{
+    display: none;
+}
 #headerImage{
     margin-left: 0px;
     float: right;

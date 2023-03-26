@@ -10,7 +10,7 @@
     <meta name="description" content="CCT College presents Movie House...watch and learn!! An afterclass movie experience like no other. *For educational purposes*">
     <!-- keywords for SEO -->
     <meta name="keywords" content="Omniplex Cinemas, Student Cinema, Cinema in Ireland, Cinema, Movies, Films, Big screen, 3D Movies, Book Tickets, Cinema Tickets, Cinema Times, Movies Times">
-    <!-- Link to Github https://github.com/KaviCCT/CA1-Assignement -->
+    <!-- Link to Github https://github.com/KaviCCT/CA1-Assignement.git -->
     <meta name="author" content="Kavi Patak sba22391">
     <!-- Icon and title visible in the browser tabs above our page -->
     <link rel="icon" href="Images/Popcornicon.png" type="image/x-icon">
@@ -26,7 +26,7 @@
     <header>  <!-- Header section with branding and description. Concept based on CCT College conducting student movie nights -->
         <section class="Head">
             <div class="container">
-                <h1> <img class="mainLogo" width="1078px" height="150px" src="Images/cooltext430441431364704.png" alt="CCT MOVIE HOUSE"> 
+                <h1> <img class="mainLogo" width="1078" height="150" src="Images/cooltext430441431364704.png" alt="CCT MOVIE HOUSE"> 
                     <!-- alt tags used throughout for a desciption in case of loading problems aswell as to assist in navigation, voice over assistant, and SEO -->
                 <img  class="mainLogo2" src="Images/cooltext430501367476887.png" alt="CCT MOVIE HOUSE">
                 </h1>
@@ -49,7 +49,7 @@
                     });
                 });
             }); 
-            // CALLING loadXMLDoc() function ON SCREEN LOAD LOAD
+            // CALLING loadXMLDoc() javascript function ON SCREEN LOAD LOAD
             window.onload = function(){
                 loadXMLDoc();
             };
@@ -65,7 +65,8 @@
                 };
                 xhr.send(null);
             }
-            // Javascript CODE FOR getData() function        
+            // Javascript CODE FOR getData() function
+            // Proceessing through our XML doc and storing each line in our corresponing tags and finally in our schedule varaiable.      
             function getData(xhr){        
                 const xmlDoc = xhr.responseXML;
                 var schedule = "";
@@ -96,6 +97,7 @@
         </script> 
         <!-- CTA: Call to action visible immediately in our navigation section which links to Each movie  -->
         <section>
+            <h2 class="h2hide">Movie Listings</h2>
             <nav class="searchNav">
                 <!-- Bootstrap grid layout used throughout, containers and rows used for positioning, alligning and responsiveness -->
                 <div class="container">
@@ -137,20 +139,21 @@
         </section>
     </header>
 <main><!-- Main section of our page contain the Movies currently on show, again utilising bootstrap grid layout. Long scrolling page design implemented based on market research. -->
+    <h2 class="h2hide">Movie Blocks</h2>
     <div class="container">
         <hr class="hr">
-        <article >
-            <div class="row" id="movieBlock">
+        <article class="movieBlock">
+            <div class="row" >
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <!-- hrefs used to direct user journey towards Movie Overview and Booking -->
                     <a href="movie2.html?Movie=000"><h5 class="mnameLinks">Blade Runner</h5></a>
-                    <a href="movie2.html?Movie=000"><img class="movieposter" src="Images/BladeRunner.jpg" alt="Blade Runner movie poster"  title="Blade Runner : click for more details" loading="eager"></a><!-- alternative info again offered and eager loading on first movie image. -->
+                    <a href="movie2.html?Movie=000"><img class="movieposter" src="Images/BladeRunner.jpg" alt="Blade Runner movie poster"  title="Blade Runner : click for more details" loading="eager"></a><!-- alternative info again offered and eager loading on first movie image. --><!-- HTML validater yet to be updated to include eager and lazy loading -->
                 </div>
                 <br>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <p class="p-text"> 
                     <img class="r-rating" src="Images/rated_r.jpg" alt="R rating"><br>
-                    <a href="https://www.imdb.com/title/tt0083658/" target="_blank"><img class="imdb" src="Images\imdb.png" alt="imdb link"></a><br> <!-- Hyperlink to IMDB reviews -->
+                    <a href="https://www.imdb.com/title/tt0083658/" target="_blank"><img class="imdb" src="Images/imdb.png" alt="imdb link"></a><br> <!-- Hyperlink to IMDB reviews -->
                     <!-- Basic movie details displayed, agained based on market research. -->
                     1982 <br>
                     1h 57m <br>
@@ -162,18 +165,19 @@
             </div>
         </article>
         <hr class="hr">
-        <article >
-            <div class="row" id="movieBlock">
+        <article class="movieBlock">
+            <div class="row" >
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <a href="movie2.html?Movie=001"><h5 class="mnameLinks">RoboCop</h5></a>
                     <a href="movie2.html?Movie=001"><img class="movieposter" src="Images/RoboCop.jpg" alt="Robocop movie poster" title="Robocop : click for more details" loading="lazy"></a>
                     <!-- Lazy loading used thereafter for quick initial loading of our page.-->
+                    <!-- HTML validater yet to be updated to include eager and lazy loading -->
                 </div>
                 <br>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <p class="p-text">
                     <img class="r-rating" src="Images/rated_r.jpg" alt="R rating"><br>
-                    <a href="https://www.imdb.com/title/tt0093870/" target="_blank"><img class="imdb" src="Images\imdb.png" alt="imdb link"></a><br>
+                    <a href="https://www.imdb.com/title/tt0093870/" target="_blank"><img class="imdb" src="Images/imdb.png" alt="imdb link"></a><br>
                     1987 <br>
                     1h 52m <br>
                     Hallroom <br>
@@ -184,8 +188,8 @@
             </div>
         </article>
         <hr class="hr">
-        <article>
-            <div class="row" id="movieBlock">
+        <article class="movieBlock">
+            <div class="row" >
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <a href="movie2.html?Movie=002"><h5 class="mnameLinks">The Terminator</h5></a>
                     <a href="movie2.html?Movie=002"><img class="movieposter" src="Images/Terminator.jpg" alt="The Terminator movie poster" title="The Terminator : click for more details" loading="lazy"></a>
@@ -194,7 +198,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <p class="p-text">
                     <img class="r-rating" src="Images/rated_r.jpg" alt="R rating"><br>
-                    <a href="https://www.imdb.com/title/tt0088247/" target="_blank"><img class="imdb" src="Images\imdb.png" alt="imdb link"></a><br>
+                    <a href="https://www.imdb.com/title/tt0088247/" target="_blank"><img class="imdb" src="Images/imdb.png" alt="imdb link"></a><br>
                     1984 <br>
                     1h 57m <br>
                     Cantene <br>
@@ -205,8 +209,8 @@
             </div>
         </article>
         <hr class="hr">
-        <article>
-            <div class="row" id="movieBlock">
+        <article class="movieBlock">
+            <div class="row" >
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <a href="movie2.html?Movie=003"><h5 class="mnameLinks">The Matrix</h5></a>
                     <a href="movie2.html?Movie=003"><img class="movieposter" src="Images/Matrix.jpg" alt="The Matrix movie poster" title="The Matrix : click for more details" loading="lazy"></a>
@@ -215,7 +219,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <p class="p-text">
                     <img class="r-rating" src="Images/rated_r.jpg" alt="R rating"><br>
-                    <a href="https://www.imdb.com/title/tt0133093/" target="_blank"><img class="imdb" src="Images\imdb.png" alt="imdb link"></a><br>
+                    <a href="https://www.imdb.com/title/tt0133093/" target="_blank"><img class="imdb" src="Images/imdb.png" alt="imdb link"></a><br>
                     1999 <br>
                     2h 16m <br>
                     Lecture Hall A <br>
@@ -226,8 +230,8 @@
             </div>
         </article>
         <hr class="hr">
-        <article>
-            <div class="row" id="movieBlock">
+        <article class="movieBlock">
+            <div class="row" >
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <a href="movie2.html?Movie=004"><h5 class="mnameLinks">Minority Report</h5></a>
                     <a href="movie2.html?Movie=004"><img class="movieposter" src="Images/MinorityReport.jpg" alt="The Manority Report movie poster" title="The Manority Report : click for more details" loading="lazy"></a>
@@ -236,7 +240,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <p class="p-text">
                     <img class="pg-rating"  src="Images/pg-13.png" alt="PG-13 rating"><br>
-                    <a href="https://www.imdb.com/title/tt0181689/" target="_blank"><img class="imdb" src="Images\imdb.png" alt="imdb link"></a><br>
+                    <a href="https://www.imdb.com/title/tt0181689/" target="_blank"><img class="imdb" src="Images/imdb.png" alt="imdb link"></a><br>
                     2002 <br>
                     2h 25m <br>
                     Gymnasium <br>
@@ -247,8 +251,8 @@
             </div>
         </article>
         <hr class="hr">
-        <article>
-            <div class="row" id="movieBlock">
+        <article class="movieBlock">
+            <div class="row" >
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <a href="movie2.html?Movie=005"><h5 class="mnameLinks">iRobot</h5></a>
                     <a href="movie2.html?Movie=005"><img class="movieposter" src="Images/iRobot.jpg" alt="iRobot movie poster" title="iRobot : click for more details" loading="lazy"></a>
@@ -257,7 +261,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <p class="p-text">
                     <img class="pg-rating"  src="Images/pg-13.png" alt="PG-13 rating"><br>
-                    <a href="https://www.imdb.com/title/tt0343818/" target="_blank"><img class="imdb" src="Images\imdb.png" alt="imdb link"></a><br>
+                    <a href="https://www.imdb.com/title/tt0343818/" target="_blank"><img class="imdb" src="Images/imdb.png" alt="imdb link"></a><br>
                     2004 <br>
                     1h 55m <br>
                     Courtyard <br>
@@ -284,10 +288,10 @@
             <hr class="hr">
         <div id="socialNav" ><!-- Links to popular social media websites. -->
             <ul class="socialtabs">
-                <li class="social-icon"><a href="https://www.facebook.com/" target="_blank"><img class="icon" src="Images\socialIconFB.jpg" alt="Facebook Icon" width="80px" height="90px"  loading="lazy"></a></li>
-                <li class="social-icon"><a href="https://www.youtube.com/" target="_blank"><img class="icon" src="Images\socialIconYT.jpg" alt="Youtube Icon" width="80px" height="90px" loading="lazy"></a></li>
-                <li class="social-icon"><a href="https://www.apple.com/" target="_blank"><img class="icon" src="Images\socialIconAp.jpg" alt="Apple Icon" width="80px" height="90px" loading="lazy"></a></li>
-                <li class="social-icon"><a href="https://twitter.com/" target="_blank"><img class="icon" src="Images\socialIconTw.jpg" alt="Twitter Icon" width="80px" height="90px" loading="lazy"></a></li>
+                <li class="social-icon"><a href="https://www.facebook.com/" target="_blank"><img class="icon" src="Images/socialIconFB.jpg" alt="Facebook Icon" width="80" height="90"  loading="lazy"></a></li>
+                <li class="social-icon"><a href="https://www.youtube.com/" target="_blank"><img class="icon" src="Images/socialIconYT.jpg" alt="Youtube Icon" width="80" height="90" loading="lazy"></a></li>
+                <li class="social-icon"><a href="https://www.apple.com/" target="_blank"><img class="icon" src="Images/socialIconAp.jpg" alt="Apple Icon" width="80" height="90" loading="lazy"></a></li>
+                <li class="social-icon"><a href="https://twitter.com/" target="_blank"><img class="icon" src="Images/socialIconTw.jpg" alt="Twitter Icon" width="80" height="90" loading="lazy"></a></li>
             </ul>
             <img class="small-logo" src="Images/cooltext430501367476887.png" alt="CCT Movie House Logo" >
         </div>

@@ -23,11 +23,11 @@
         <!-- Bootstrap grid layout used throughout, containers and rows used for positioning, alligning and responsiveness -->
         <div class="container">
             <br>
-            <h1> <img class="mainLogo" width="1078px" height="150px" src="Images/cooltext430441431364704.png"   alt="CCT MOVIE HOUSE">
+            <h1> <img class="mainLogo" width="1078" height="150" src="Images/cooltext430441431364704.png"   alt="CCT MOVIE HOUSE">
                 <img  class="mainLogo2" src="Images/cooltext430501367476887.png" alt="CCT MOVIE HOUSE"> 
             </h1>
             <hr class="hr">
-            <h2> <img class="slogan" width="362px" height="59px" src="Images/cooltext430441489635834.png" alt="Watch and learn..."> </h2>
+            <h2> <img class="slogan" width="362" height="59" src="Images/cooltext430441489635834.png" alt="Watch and learn..."> </h2>
             <hr class="hr2">
             <br>
             <h3>Now Showing</h3>
@@ -39,11 +39,10 @@
                 </div>
                 <div>
                     <div class="col-md-6 col-sm-4 col-xs-12">
-                        <p> <!-- Actual descriptions stored within our movie description array and displayed based on page-->
+                        <!-- Actual descriptions stored within our movie description array and displayed based on page-->
                         <div id="descriptionSlide"></div>
-                        <br>
-                        </p>
                     </div>
+                    <br><br>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <p><!-- settings applied to our trailer inc. dimensions, autoplay and initially set to mute -->
                         <video id="trailerSlide" width="700" height="320" controls muted autoplay loop crossorigin="anonymous"  src="Images/BladeRunne(1982)-AModernTrailer.mp4"></video>
@@ -55,8 +54,10 @@
     </section>
     <section id="booking-section"><!-- Booking section  with id attribute used to show andd hide accordinlgy, as requested through our functions -->
         <div class="container" id="booking">
+            <br>
+            <h3 class="h3hide">Book Tickets</h3>
             <fieldset>
-                <h3> <legend id="bookTicketsHead">Book Tickets</legend> </h3>
+                <legend id="bookTicketsHead">Book Tickets</legend> 
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-xs-4">
                         <img class="smallLogo" src="Images/cooltext430501367476887.png" alt="CCT Movie House Logo" >
@@ -66,8 +67,8 @@
                         <p>Submit your details below to complete your booking.</p>
                     </div>
                 </div><!-- Bootstrap grid layout used throughout, containers and rows used for positioning, alligning and responsiveness -->
-                <div class="col-md-4 col-sm-4 col-xs-4" id="bookingImage">
-                    <img id="bookingImage" width="883px" height="881px" src="Images\tickets.jpg" alt="Neon Tickets Image" >
+                <div class="col-md-4 col-sm-4 col-xs-4" >
+                    <img id="bookingImage" width="883" height="881" src="Images/tickets.jpg" alt="Neon Tickets Image" >
                 </div>
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-12">
@@ -81,24 +82,24 @@
                                 </div>
                                 <br><!-- Spam trap which is hidden from users, but not detectable by bots -->
                                 <div id="spam" style="display: none;">
-                                    <label for="spamTrap">Username</label>
+                                    <label for="spamTrap">Username</label><!-- Sfor attribute shows error on validator. -->
                                     <input type="text" name="spamTrap">
                                 </div>
                                 <div><!-- Details must correspond to input type, size, name in php form -->
-                                    <label class="formLabel" required for="name">Name<span class="required">*</span></label><!-- Required field for certain mandatory inputs, Placeholder for example inputs, autofocus for CTA -->
-                                    <input id="name" type="text" size="40" name="name" required placeholder="Full Name" autofocus  style="color: rgb(255, 255, 255);" >
+                                    <label class="formLabel"  for="name">Name<span class="required">*</span></label><!-- Required field for certain mandatory inputs, Placeholder for example inputs, autofocus for CTA -->
+                                    <input id="name" type="text" size="40" name="name"  placeholder="Full Name" autofocus  style="color: rgb(255, 255, 255);" required>
                                 </div>
                                 <br>
                                 <div>
                                     <br><!-- HTML integrated datetime picker  -->
-                                    <label class="formLabel" required for="dateTime">Date <span class="required">*</span></label>
-                                    <input id="dateTime" type="datetime-local" size="35"  min="2023-02-28T14:00" max="2023-04-30T24:00" name="dateTime" required style="color: rgb(255, 255, 255);" >
+                                    <label class="formLabel" for="dateTime">Date <span class="required">*</span></label>
+                                    <input id="dateTime" type="datetime-local" size="35"  min="2023-02-28T14:00" max="2023-04-30T24:00" name="dateTime"  style="color: rgb(255, 255, 255);" required>
                                     <br>
                                 </div>
                                 <br>
                                 <div>
                                     <br><!-- HTML integrated email type  -->
-                                    <label class="formLabel" required for="email">Email <span class="required">*</span></label>
+                                    <label class="formLabel" for="email">Email <span class="required">*</span></label>
                                     <input id="email" type="email" value="" size="50" name="email" required placeholder="Email Address" style="color: rgb(255, 255, 255);">
                                     <br>
                                 </div>
@@ -112,7 +113,7 @@
                                 <br>
                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                     <br><!-- onclick our confirm function with extra validation is called  -->
-                                    <button required id="submitbutton" onclick="confirm()" type="submit" class="submit">
+                                    <button id="submitbutton" onclick="confirm()" type="submit" class="submit">
                                     SUBMIT
                                     </button>
                                     <br>
@@ -124,8 +125,9 @@
             </fieldset>
             <br><br><!-- Contact us section -->
             <section class="address-section">
+                <h4 class="h4hide" style="text-align:left ;">Contact Us</h4>
                 <fieldset>
-                    <h4 style="text-align:left ;"></h4><legend id="contactUs">Contact Us</legend></h4>
+                    <legend id="contactUs">Contact Us</legend>
                     <div class="col-md-4 col-sm-4 col-xs-12">      
                         <div class="address">
                             <address> <!-- Address tags implemented for SEO -->
@@ -137,8 +139,8 @@
                             </address>
                         </div>
                             <p><!-- Contact options available but hidden for securuty and spamming reasons -->
-                                <a href="tel:+353 1 6333444">Call us </a><br>
-                                <a href="fax:+353 1 6333446">Fax us </a><br>
+                                <a href="tel:+35316333444">Call us </a><br>
+                                <a href="fax:+35316333446">Fax us </a><br>
                                 <a href="mailto:info@cct.ie">Email us </a><br>
                             </p>
                     </div>
@@ -166,7 +168,6 @@
                     </div>
                 </div>
             </div>
-            </div>
             <div id="linkNav" >
                 <ul class="tabs">
                     <li class="tab"><a onclick="booking()" class="book-tickets" href="#">Book Tickets</a></li>
@@ -178,10 +179,10 @@
             <hr class="hr">
             <div id="socialNav" >
                 <ul class="socialtabs"><!-- Links to popular social media. -->
-                    <li class="social-icon"><a href="https://www.facebook.com/" target="_blank"><img class="icon" src="Images\socialIconFB.jpg" alt="Facebook Icon" width="80px" height="90px" ></a></li>
-                    <li class="social-icon"><a href="https://www.youtube.com/" target="_blank"><img class="icon" src="Images\socialIconYT.jpg" alt="Youtube Icon" width="80px" height="90px"></a></li>
-                    <li class="social-icon"><a href="https://www.apple.com/" target="_blank"><img class="icon" src="Images\socialIconAp.jpg" alt="Apple Icon" width="80px" height="90px"></a></li>
-                    <li class="social-icon"><a href="https://twitter.com/" target="_blank"><img class="icon" src="Images\socialIconTw.jpg" alt="Twitter Icon" width="80px" height="90px" ></a></li>
+                    <li class="social-icon"><a href="https://www.facebook.com/" target="_blank"><img class="icon" src="Images/socialIconFB.jpg" alt="Facebook Icon" width="80" height="90" ></a></li>
+                    <li class="social-icon"><a href="https://www.youtube.com/" target="_blank"><img class="icon" src="Images/socialIconYT.jpg" alt="Youtube Icon" width="80" height="90"></a></li>
+                    <li class="social-icon"><a href="https://www.apple.com/" target="_blank"><img class="icon" src="Images/socialIconAp.jpg" alt="Apple Icon" width="80" height="90"></a></li>
+                    <li class="social-icon"><a href="https://twitter.com/" target="_blank"><img class="icon" src="Images/socialIconTw.jpg" alt="Twitter Icon" width="80" height="90" ></a></li>
                 </ul>
                 <a href="index.html"><img class="small-logo" src="Images/cooltext430501367476887.png" alt="CCT Movie House Logo" title="Return to homepage."></a>
             </div>
@@ -350,7 +351,7 @@
         //     changeSource(url);
         // }
 
-        // Alert function 
+        // Alert function  onload of screen
         window.onload = function(){
             document.getElementById('booking').style.display = 'none';
             swapImage();
